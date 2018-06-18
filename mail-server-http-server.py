@@ -6,7 +6,6 @@ import os
 import threading
 from socketserver import ThreadingMixIn
 import json
-import ssl
 import mailClient
 
 #import smtplib for sending the email ie.  Connect as a client to a email server
@@ -54,5 +53,4 @@ if __name__ == '__main__':
     port = int(os.environ.get('PORT',8000))
     server_address = ('', port)
     httpd = ThreadHTTPServer(server_address, EmailResponder)
-    httpd.socket=ssl.wrap_socket(httpd.socket, certfile = '/Users/dan/.certs/server.pem', server_side=True)
     httpd.serve_forever()
