@@ -33,9 +33,9 @@ class EmailResponder(http.server.BaseHTTPRequestHandler):
             self.send_response(201)
             self.send_header('Content-Type','application/json')
             self.send_header('Access-Control-Allow-Credentials','true')
-            self.send_header('Access-Control-Allow-Origin','http://localhost:4000')
+            self.send_header('Access-Control-Allow-Origin','https://dustinchildsmusic.com/')
             self.send_header('Access-Control-Expose-Headers', 'AMP-Access-Control-Allow-Source-Origin')
-            self.send_header('AMP-Access-Control-Allow-Source-Origin', 'http://localhost:4000')
+            self.send_header('AMP-Access-Control-Allow-Source-Origin', 'https://dustinchildsmusic.com/')
             self.end_headers()
 
             # get useful fields from the request 
