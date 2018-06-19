@@ -39,12 +39,12 @@ def send(first_name, last_name, email_address, telephone_number):
 
 
 
-
-    try:
-        email_server = smtplib.SMTP('smtp.gmail.com', 587)
-        email_server.starttls()
-        email_server.login(server_usernamae, server_password)
-        email_server.send_message(email_message)
-        email_server.quit()
-    except smtplib.SMTPException:
-        print('We got some error! If you want to pin point it docs are here: https://docs.python.org/3.6/library/smtplib.html ')
+    if server_password != None:
+        try:
+            email_server = smtplib.SMTP('smtp.gmail.com', 587)
+            email_server.starttls()
+            email_server.login(server_usernamae, server_password)
+            email_server.send_message(email_message)
+            email_server.quit()
+        except smtplib.SMTPException:
+            print('We got some error! If you want to pin point it docs are here: https://docs.python.org/3.6/library/smtplib.html ')
