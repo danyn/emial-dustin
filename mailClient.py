@@ -1,12 +1,9 @@
 
 
-def send(first_name, last_name, email_address, telephone_number):
+def send(first_name, last_name, email_address, telephone_number, server_password):
 
     #import smtplib for sending the email ie. Connect as a client to a email server
     import smtplib
-
-    #use os to access runtime for private info
-    import os
 
     #import any email modules needed to construct headers and format the email itself
     from email.mime.text import MIMEText
@@ -35,7 +32,7 @@ def send(first_name, last_name, email_address, telephone_number):
 
     #manage a connection to a mail server then send the email - finally time to use smtplib
     server_usernamae = 'a.service.signup@gmail.com'
-    server_password = os.environ.get('PS')
+   
 
 
 

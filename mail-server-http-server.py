@@ -38,6 +38,7 @@ class EmailResponder(http.server.BaseHTTPRequestHandler):
             self.end_headers()
 
             # get useful fields from the request 
+            server_password = os.environ.get('PW')
             fields = cgi.parse_multipart(self.rfile, pdict)
             first_name = fields.get('First_Name')[0].decode()
             last_name = fields.get('Last_Name')[0].decode()
@@ -46,7 +47,7 @@ class EmailResponder(http.server.BaseHTTPRequestHandler):
             json_response = json.dumps({'email_address': email_address,'first_name':first_name, 'last_name':last_name})
             self.wfile.write(bytes(json_response, 'utf-8'))
             print(first_name)
-            mailClient.send(first_name, last_name, email_address, telephone_number)
+            mailClient.send(first_name, last_name, email_address, telephone_number, server_password)
             
 
 if __name__ == '__main__':
