@@ -10,15 +10,16 @@ def send(first_name, last_name, email_address, telephone_number, server_password
 
     # compose an email message with body using the email native python library
     #some string that will become the body of the message
-    body = '''You have an email from {}.
-
-    The email address to reply to is:{}
-    The Telephone number to reply to is:{} 
+    body = '''Hi Dustin you have an email from {}.
+    This email was sent because the contact form on your website was submitted.
+    The email address to reply to is: {}
+    The Telephone number to reply to is: {} 
+    Have a great day!
     
     '''
     # set information for the body and the headers
    
-    toAddress = 'eisen.dan@gmail.com'
+    toAddress = 'dustinchilds@gmail.com'
     person = first_name + ' ' + last_name
 
     # set the body of the message and instanciate the email messsage to be sent 
